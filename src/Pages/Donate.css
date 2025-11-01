@@ -1,0 +1,194 @@
+/* ==========================
+   DONATE PAGE STYLING
+   ========================== */
+.donate-page {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 90vh;
+  padding: 2rem;
+  gap: 2rem;
+  background: linear-gradient(135deg, #f3f8ff, #e8f1ff);
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------- LEFT SIDE ---------- */
+.donate-left {
+  flex: 1;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.donate-left:hover {
+  transform: translateY(-4px);
+}
+
+.donate-left h1 {
+  color: #01338d;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.donate-left p {
+  margin-bottom: 1.5rem;
+  color: #444;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* ---------- BUTTON OPTIONS ---------- */
+.donate-options {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background:#ff5530;
+  color: #1a1a1a;
+}
+.btn-primary:hover {
+  background: #ffffff,
+}
+.btn-secondary {
+  background: #01338d;
+  color: #fff;
+}
+.btn-secondary:hover {
+  background:#ff5530;
+}
+
+.active {
+  outline: 3px solid #01338d;
+}
+
+/* ---------- FORMS ---------- */
+.donate-form,
+.manual-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.donate-form input,
+.manual-form input {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.donate-form input:focus,
+.manual-form input:focus {
+  border-color: #01338d;
+}
+
+.donate-form button,
+.manual-form button {
+  padding: 0.8rem;
+  border-radius: 999px;
+  background: #01338d;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.donate-form button:hover,
+.manual-form button:hover {
+  background: #ff5530;
+}
+
+.status-message {
+  margin-top: 1rem;
+  color: #01338d;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* ---------- RIGHT SIDE ---------- */
+.donate-right {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.donate-right:hover {
+  transform: translateY(-4px);
+}
+
+.donate-image {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.donate-message {
+  padding: 1.5rem;
+  color: #01338d;
+}
+
+.donate-message h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.donate-message p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 900px) {
+  .donate-page {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .donate-left,
+  .donate-right {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .donate-right {
+    order: -1; /* Move image above form */
+  }
+
+  .donate-left h1 {
+    font-size: 1.5rem;
+  }
+
+  .donate-message h2 {
+    font-size: 1.3rem;
+  }
+}

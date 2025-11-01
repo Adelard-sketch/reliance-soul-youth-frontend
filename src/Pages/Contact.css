@@ -1,0 +1,144 @@
+.contact-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 8rem 5%;
+  background: #f8f9fc;
+  font-family: "Poppins", sans-serif;
+  gap: 6rem;
+}
+
+/* LEFT SECTION - FORM */
+.contact-form-section {
+  flex: 1;
+  max-width: 600px;
+}
+
+.contact-title {
+  font-size: 2rem;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* === CONTACT INFO BOX (Email, WhatsApp, Call) === */
+.contact-email {
+  margin-bottom: 2rem;
+  padding: 1rem 1.2rem;
+  background: rgba(161, 129, 129, 0.05);
+  border-left: 4px solid #1d4ed8;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-email p {
+  margin: 0.5rem 0;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.contact-email strong {
+  color:coral;
+}
+
+.contact-email a {
+  color: #1d4ed8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+  color: #2563eb;
+}
+
+/* === FORM === */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.2);
+}
+
+.contact-form button {
+  background: #1d4ed8;
+  color: white;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.contact-status {
+  margin-top: 1rem;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+/* RIGHT SECTION - IMAGE */
+.contact-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-image {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+
+  .contact-image img {
+    max-width: 100%;
+  }
+
+  .contact-form-section {
+    max-width: 100%;
+  }
+
+  .contact-email {
+    text-align: center;
+  }
+}

@@ -1,0 +1,102 @@
+.admin-container {
+  padding: 2rem;
+  padding-top: 6rem; /* ✅ Push content below the navbar */
+  background: #f8f9fc;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.admin-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.admin-header h1 {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.admin-header p {
+  color: #666;
+}
+
+/* rest of your CSS unchanged */
+.admin-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-tabs button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: #e9ecef;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.admin-tabs button.active {
+  background: #1d4ed8;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(29, 78, 216, 0.3);
+}
+
+.admin-tabs button:hover {
+  background: #2563eb;
+  color: white;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.admin-content {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background: #2563eb;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+tr:hover {
+  background: #f3f6ff;
+}
+
+.delete-btn {
+  background: #dc2626;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+}

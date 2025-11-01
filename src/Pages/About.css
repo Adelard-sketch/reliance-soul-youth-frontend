@@ -1,0 +1,349 @@
+/* === Base === */
+html {
+  scroll-behavior: smooth;
+}
+
+.about-container {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background: #f9f9f9;
+  overflow-x: hidden;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* === Dark Mode === */
+.dark-mode {
+  background: #111;
+  color: #f5f5f5;
+}
+
+.dark-mode .about-text p,
+.dark-mode .section-subtitle,
+.dark-mode .video-info p {
+  color: #ddd;
+}
+
+.dark-mode .section-title,
+.dark-mode .about-text h2,
+.dark-mode .video-info h3 {
+  color: #ffa561;
+}
+
+.dark-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #01338d;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.dark-toggle:hover {
+  background: #ff6d4d;
+}
+
+/* === Hero Section === */
+.about-hero {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.about-overlay {
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  padding: 2rem 2.5rem;
+  border-radius: 14px;
+  text-align: center;
+  color: #fff;
+  max-width: 900px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.about-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* === Section Wrapper === */
+.about-section {
+  padding: 4rem 2rem;
+  max-width: 1150px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+/* === Content Layout === */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+.about-content.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-text {
+  flex: 1 1 450px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: #01338d;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.about-text p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* === Image Styling === */
+.about-image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image.vertical img {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* === Vision, Mission & Values === */
+.vision-mission {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.vision-mission h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #01338d;
+  font-weight: 700;
+}
+
+.vmv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.vmv-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vmv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.vmv-card h3 {
+  color: #ff6d4d;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.vmv-card p,
+.vmv-card li {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.vmv-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vmv-card li::before {
+  content: "• ";
+  color: #01338d;
+  font-weight: bold;
+}
+
+/* === YouTube Showcase === */
+.work-section {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #01338d;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.youtube-link {
+  color: #ff6d4d;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.youtube-link:hover {
+  color: #01338d;
+}
+
+/* === Video Gallery === */
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.video-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 220px;
+  border: none;
+  border-radius: 14px 14px 0 0;
+  display: block;
+}
+
+/* === Video Description === */
+.video-info {
+  padding: 1rem 1.25rem;
+}
+
+.video-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #01338d;
+  margin-bottom: 0.4rem;
+}
+
+.video-info p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* === Animations === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.2rem;
+  }
+
+  .about-subtitle {
+    font-size: 1rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    max-width: 90%;
+  }
+
+  .video-card iframe {
+    height: 200px;
+  }
+
+  .video-info h3,
+  .video-info p {
+    text-align: center;
+  }
+
+  .about-hero {
+    height: 50vh;
+  }
+
+  .vision-mission {
+    padding: 2rem 1rem;
+  }
+
+  .vision-mission h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  .about-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .video-gallery {
+    grid-template-columns: 1fr;
+  }
+}

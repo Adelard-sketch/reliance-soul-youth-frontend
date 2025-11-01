@@ -1,0 +1,227 @@
+/* === Background & Overlay === */
+.booking-background {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.8);
+  min-height: 100vh;
+  padding: 6rem 4rem;
+}
+
+/* === Hero Section === */
+.hero-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color:    #fff;
+;
+  margin-bottom: 1rem;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hero-vision {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* === MAIN TWO-COLUMN LAYOUT === */
+.booking-section {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; /* Left: studios | Right: form */
+  align-items: flex-start; /* Align form to top */
+  gap: 2.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* === LEFT SIDE: STUDIO GRID === */
+.studio-options h2 {
+  font-size: 1.8rem;
+  color: #ff6d4d;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.studio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two per row */
+  gap: 1.2rem;
+}
+
+.studio-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  border: 2px solid transparent;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.studio-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.studio-card:hover img {
+  transform: scale(1.05);
+}
+
+.studio-info {
+  padding: 0.8rem;
+}
+
+.studio-info h3 {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.studio-info p {
+  font-size: 0.85rem;
+  color: #eee;
+  line-height: 1.4;
+}
+
+.studio-card.selected {
+  border-color: #ffcc70;
+  box-shadow: 0 0 15px rgba(255, 204, 112, 0.4);
+}
+
+/* === RIGHT SIDE: BOOKING FORM === */
+.booking-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  color: #222;
+  padding: 2.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  align-self: start; /* Keep form at the top */
+  position: sticky;
+  top: 2rem; /* Stick to top when scrolling */
+}
+
+.booking-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: #01338d;
+  margin-bottom: 1.2rem;
+}
+
+.selected-studio {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #01338d;
+  font-weight: 600;
+}
+
+/* === FORM STYLING === */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.9rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  transition: 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #01338d;
+  box-shadow: 0 0 6px rgba(1, 51, 141, 0.4);
+  background: #fff;
+}
+
+/* === BUTTON === */
+.booking-btn {
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #01338d, #ff6d4d);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.3s;
+}
+
+.booking-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #ff6d4d, #01338d);
+}
+
+.status-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #01338d;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .booking-section {
+    grid-template-columns: 1fr; /* Stack on small screens */
+  }
+
+  .studio-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+
+  .booking-container {
+    position: static;
+    margin-top: 2rem;
+  }
+}
+/* Smooth fade-in effect */
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
