@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Donate.css";
-import thankImage from "../assets/joyce1.jpg"; // ✅ using your local image
+import thankImage from "../assets/Ezekiel.jpg"; 
 
 const Donate = () => {
   const [mode, setMode] = useState<"stripe" | "manual">("stripe");
