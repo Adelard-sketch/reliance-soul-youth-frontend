@@ -23,7 +23,8 @@ const Contact = () => {
     setStatus("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/contact", formData);
+      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+      const res = await axios.post(`${API_URL}/api/contact`, formData);
       if (res.data.success) {
         setStatus("✅ Thank you! Your message has been received.");
         setFormData({ name: "", email: "", subject: "", message: "" });
