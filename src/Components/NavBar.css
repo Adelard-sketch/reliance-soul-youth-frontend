@@ -74,7 +74,7 @@
   bottom: -3px;
   width: 0%;
   height: 2px;
-  background: #01338d;
+ 
   transition: width 0.3s ease;
 }
 
@@ -114,7 +114,7 @@
 .donate-btn {
   font-weight: 700;
   color: #fff;
-  background: linear-gradient(135deg, #01338d, #ff6d4d);
+  background: linear-gradient(135deg, #ff6d4d,#01338d);
   border-radius: 50px;
   padding: 10px 26px;
   border: none;
@@ -126,7 +126,7 @@
 
 .donate-btn:hover {
   transform: scale(1.08);
-  background: linear-gradient(135deg, #ff6d4d, #01338d);
+  background:  linear-gradient(135deg, #ff6d4d,#fec44f);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
@@ -220,7 +220,7 @@
   }
 
   .mobile-menu .nav-link:hover {
-    color: #01338d;
+    color: #fff;
     padding-left: 6px;
   }
 

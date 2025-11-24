@@ -10,7 +10,7 @@ import videoImg from "../assets/videobook.jpg";
 import soundImg from "../assets/soundsystem.png";
 
 const BookStudio = () => {
-  const location = useLocation(); // ✅ Detect route change
+  const location = useLocation(); 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,7 +39,7 @@ const BookStudio = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleCategorySelect = (category) => {
+  const handleCategorySelect = (category: string) => {
     setFormData((prev) => ({ ...prev, category }));
   };
 

@@ -61,7 +61,7 @@ function Admin() {
   return (
     <div className="admin-container">
       <header className="admin-header">
-        <h1>Reliance Studios Admin Dashboard</h1>
+        <h1>Reliance Soul Internation Youth Foundation Admin Dashboard</h1>
         <p>Welcome back, Admin 👋</p>
       </header>
 

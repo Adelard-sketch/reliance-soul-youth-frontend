@@ -21,10 +21,10 @@ const About = () => {
         "This piece calls for all of us to come together, showing love through actions that promote peace, justice, and sustainability. It reminds us that by caring for each other and our planet, we can fight violence, prevent conflict, and work toward a better future for everyone.",
     },
     {
-      id: "HBEmpsg4Vas",
-      title: "Why Reliance Soul International Youth Foundation",
+      id: "Jz1DgnZ_JQQ",
+      title: "Don't Cry Reliance Melody",
       description:
-        "Discover the passion behind everything we do as a foundation and the bold dreams we're working to achieve. Join us on this journey to create meaningful change, where every action brings us closer to a safer, fairer, and more sustainable world.",
+        "In moments of conflict, pain, and uncertainty, Don’t Cry by Reliance Melody is a reminder that light still exists. This emotional piece blends heartfelt melodies with a message of strength, healing, and resilience. It encourages listeners to find hope and courage even in the darkest times.",
     },
   ];
 

@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./Home.css";
 
 // === Backgrounds ===
-import bg1 from "../assets/rsyGoma.jpg";
+import bg1 from "../assets/elili_Sing.jpg";
 import bg2 from "../assets/love1.mp4";
 import bg3 from "../assets/nature.mp4";
 import bg4 from "../assets/design1.jpg";
@@ -12,9 +12,11 @@ import bg5 from "../assets/short3.mp4";
 import bg6 from "../assets/rsy_melody1.jpg";
 import bg7 from "../assets/danceShort.mp4";
 import bg8 from "../assets/rsy_melody2.jpg";
+import bg9 from "../assets/rsy0.jpg";
 
 const backgrounds = [
   { src: bg1, type: "image" },
+  { src: bg9, type: "image" },
   { src: bg2, type: "video" },
   { src: bg3, type: "video" },
   { src: bg4, type: "image" },
@@ -26,14 +28,14 @@ const backgrounds = [
 
 // === Programs ===
 import musicImg from "../assets/Talent.jpg";
-import danceImg from "../assets/dance.jpg";
+import danceImg from "../assets/Cultural_dance.jpg";
 import designImg from "../assets/designtop.jpg";
 
 const programs = [
   {
     img: musicImg,
     title: "Music Workshops",
-    desc: "Group & 1:1 sessions focused on performance, song composition, instruments, and production basics.",
+    desc: "Sessions focused on performance, song composition, instruments, and production basics.",
   },
   {
     img: danceImg,
@@ -62,6 +64,14 @@ import healingImg from "../assets/house3.jpg";
 import dance from "../assets/Cultural_dance.jpg";
 import design from "../assets/design1.jpg";
 
+// === Future Vision ===
+import dream1 from "../assets/dream1.jpg";
+import dream2 from "../assets/dream2.jpg";
+import dream3 from "../assets/dream3.jpg";
+import dream4 from "../assets/dream4.jpg";
+
+
+
 const projects = [
   {
     img: choirImg,
@@ -76,18 +86,15 @@ const projects = [
     desc: "Using art and creativity to support emotional healing and wellbeing.",
   },
   {
-    img: dance,
-    type: "image",
-    title: "Body Movement",
-    desc: "Using dance for healing, social cohesion, and cultural empowerment.",
-  },
-  {
     img: design,
     type: "image",
     title: "Skill Building Programs",
     desc: "Empowerment in fashion design, pencil portrait, and artisan skill-building for youth empowerment.",
   },
 ];
+
+// === Future Vision Images ===
+const visionImages = [dream1, dream2, dream3, dream4];
 
 // === Animation Variants ===
 const fadeIn = {
@@ -142,6 +149,16 @@ const ProjectCard = ({ img, title, desc, type }: any) => (
       <h3>{title}</h3>
       <p>{desc}</p>
     </div>
+  </motion.article>
+);
+
+const VisionCard = ({ img, index }: any) => (
+  <motion.article
+    className="vision-card"
+    whileHover={{ scale: 1.05 }}
+    transition={{ type: "spring", stiffness: 220 }}
+  >
+    <img src={img} alt={`Vision ${index + 1}`} className="vision-img" />
   </motion.article>
 );
 
@@ -300,6 +317,22 @@ export default function Home() {
         <div className="projects-grid">
           {projects.map((p, i) => (
             <ProjectCard key={i} {...p} />
+          ))}
+        </div>
+      </motion.section>
+
+      {/* === FUTURE VISION === */}
+      <motion.section
+        className="section vision"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <h2 className="section-title">The Reliance Artistic Center Dream</h2>
+        <div className="vision-grid">
+          {visionImages.map((img, i) => (
+            <VisionCard key={i} img={img} index={i} />
           ))}
         </div>
       </motion.section>
