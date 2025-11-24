@@ -5,11 +5,10 @@
   import gloria from "../assets/Gloria3.jpg";
   import sonia from "../assets/sonia.jpg";
   import clara from "../assets/clara.png";
-  import adel from "../assets/AdelardProfil.JPG";
+  import adel from "../assets/Adelard .jpg";
   import naomi from "../assets/naomi.png";
   import jp from "../assets/jpOr.png";
   import joseph from "../assets/joseph.png";
-  import adel2 from "../assets/Adelb.jpg";
   import daima from "../assets/daima.jpg";
   import aimable from "../assets/aimable.png"; 
   import gentil from "../assets/gentil.png";  
@@ -161,28 +160,28 @@ const VolunteerSection: React.FC<{ volunteers: Volunteer[] }> = ({ volunteers })
         title: "Board Chair",
         bio: "With a background in Business Administration at Andrews University (USA), Neema is passionate about developing sustainable livelihoods across Africa.",
         image: blaise,
-        social: { linkedin: "", instagram:"https://www.instagram.com/blaisemuhune/", email: " " },
+        social: { linkedin: "", instagram: "https://www.instagram.com/blaisemuhune/", email: "" },
       },
       {
         name: "Neema G. Wereje",
         title: "Board member",
         bio: "With a background in Business Administration at Andrews University (USA), Neema is passionate about developing sustainable livelihoods across Africa.",
         image: gloria,
-        social: { linkedin: "https://www.linkedin.com/in/neema-wereje-074013272/", instagram:"https://www.instagram.com/neema_gloria/", email: "neemagloria14@gmail.com" },
+        social: { linkedin: "https://www.linkedin.com/in/neema-wereje-074013272/", instagram: "https://www.instagram.com/neema_gloria/", email: "neemagloria14@gmail.com" },
       },
       {
         name: "Borauzima H. Adelard",
         title: "Board Member",
         bio: "Passionate about community growth, global citizenship, and computer science.",
         image: adel,
-        social: { linkedin: "https://www.linkedin.com/in/borauzima-adelard-a6875b2ab/" , facebook: "https://www.facebook.com/adelard.hnz/", instagram: "https://www.instagram.com/a.d.e.l_hnz/" , email:"adelborauzima@gmail.com", tiktok:"https://www.tiktok.com/@adel_mic?lang=en" },
+        social: { linkedin: "https://www.linkedin.com/in/borauzima-adelard-a6875b2ab/", facebook: "https://www.facebook.com/adelard.hnz/", instagram: "https://www.instagram.com/a.d.e.l_hnz/", email: "adelborauzima@gmail.com", tiktok: "https://www.tiktok.com/@adel_mic?lang=en" },
       },
       {
         name: "Esther Dechy",
         title: "Board Member",
         bio: "Dedicated to youth empowerment and leadership transformation.",
         image: estherDechy,
-        social: { facebook: "https://www.facebook.com/esther.dechy", linkedin: "https://www.linkedin.com/in/esther-dechy-811013234/" , instagram: " https://www.instagram.com/essydechy/"},
+        social: { facebook: "https://www.facebook.com/esther.dechy", linkedin: "https://www.linkedin.com/in/esther-dechy-811013234/", instagram: "https://www.instagram.com/essydechy/" },
       },
           {
         name: "Elie Magambo",
@@ -205,7 +204,7 @@ const VolunteerSection: React.FC<{ volunteers: Volunteer[] }> = ({ volunteers })
         title: "Chief Executive Officer",
         bio: "Guides the organization with vision and strategy.",
         image: adel,
-        social: { linkedin: "https://www.linkedin.com/in/borauzima-adelard-a6875b2ab/" , facebook: "https://www.facebook.com/adelard.hnz/", instagram: "https://www.instagram.com/a.d.e.l_hnz/" , email:"adelborauzima@gmail.com", tiktok:"https://www.tiktok.com/@adel_mic?lang=en"  },
+        social: { linkedin: "https://www.linkedin.com/in/borauzima-adelard-a6875b2ab/", facebook: "https://www.facebook.com/adelard.hnz/", instagram: "https://www.instagram.com/a.d.e.l_hnz/", email: "adelborauzima@gmail.com", tiktok: "https://www.tiktok.com/@adel_mic?lang=en" },
       },
       {
         name: "Sonia Glorone",
@@ -219,7 +218,7 @@ const VolunteerSection: React.FC<{ volunteers: Volunteer[] }> = ({ volunteers })
         title: "Creative Programs Director",
         bio: "Committed to providing artistic programs to empower young people.",
         image: daima,
-        social: { facebook: "https://www.facebook.com/diams.nyamusuma.3", email: " daimadavid90@gmail.com" },
+        social: { facebook: "https://www.facebook.com/diams.nyamusuma.3", email: "daimadavid90@gmail.com" },
       },
       {
         name: "Naomi Aluel Ateng Magot",
@@ -240,7 +239,7 @@ const VolunteerSection: React.FC<{ volunteers: Volunteer[] }> = ({ volunteers })
         title: "Director of Communications and Media",
         bio: "Responsible for RSYI’s communication and media strategy.",
         image: joseph,
-        social: { instagram: "https://www.instagram.com/mr_volcano10/", facebook: "https://www.facebook.com/joseph.masirika.92", tiktok:"https://www.tiktok.com/@mr_volcano10?lang=en", email: "fungulomasirika8@gmail.com" },
+        social: { instagram: "https://www.instagram.com/mr_volcano10/", facebook: "https://www.facebook.com/joseph.masirika.92", tiktok: "https://www.tiktok.com/@mr_volcano10?lang=en", email: "fungulomasirika8@gmail.com" },
       },
     ],
     volunteers: [
