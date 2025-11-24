@@ -5,7 +5,7 @@
   import gloria from "../assets/Gloria3.jpg";
   import sonia from "../assets/sonia.jpg";
   import clara from "../assets/clara.png";
-  import adel from "../assets/Adelard .jpg";
+  import adel from "../assets/adelard_ceo.png";
   import naomi from "../assets/naomi.png";
   import jp from "../assets/jpOr.png";
   import joseph from "../assets/joseph.png";
