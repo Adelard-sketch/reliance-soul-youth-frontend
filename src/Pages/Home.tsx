@@ -107,15 +107,26 @@ const preloadMedia = (src: string, type: string) =>
   new Promise<void>((resolve) => {
     if (type === "image") {
       const img = new Image();
+      const handleLoad = () => {
+        img.onload = null;
+        img.onerror = null;
+        resolve();
+      };
+      img.onload = handleLoad;
+      img.onerror = handleLoad;
       img.src = src;
-      img.onload = () => resolve();
-      img.onerror = () => resolve();
     } else if (type === "video") {
       const video = document.createElement("video");
+      video.preload = "metadata"; // Only load metadata, not full video
+      const handleLoad = () => {
+        video.oncanplaythrough = null;
+        video.onerror = null;
+        video.src = ""; // Clear source to prevent memory leak
+        resolve();
+      };
+      video.oncanplaythrough = handleLoad;
+      video.onerror = handleLoad;
       video.src = src;
-      video.preload = "auto";
-      video.oncanplaythrough = () => resolve();
-      video.onerror = () => resolve();
     } else {
       resolve();
     }

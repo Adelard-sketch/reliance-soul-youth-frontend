@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./Components/Navbar";
+import ErrorBoundary from "./Components/ErrorBoundary";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Gallery from "./Pages/Gallery";
@@ -16,11 +17,12 @@ function App() {
   const token = localStorage.getItem("token");
 
   return (
-    <div>
-      <Navbar />
-      <main className="main-container">
-        <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
-          <Routes>
+    <ErrorBoundary>
+      <div>
+        <Navbar />
+        <main className="main-container">
+          <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
+            <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
@@ -39,6 +41,7 @@ function App() {
         </Suspense>
       </main>
     </div>
+    </ErrorBoundary>
   );
 }
 

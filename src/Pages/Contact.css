@@ -81,6 +81,24 @@
   box-shadow: 0 0 6px rgba(37, 99, 235, 0.2);
 }
 
+.contact-form .form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.contact-form input.error,
+.contact-form textarea.error {
+  border-color: #ef4444;
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.2);
+}
+
+.contact-form .error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: -0.5rem;
+}
+
 .contact-form button {
   background: #1d4ed8;
   color: white;
