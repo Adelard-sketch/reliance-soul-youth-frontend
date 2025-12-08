@@ -2,8 +2,7 @@
   "name": "frontend",
   "version": "1.0.0",
   "type": "module",
-  "main": "eslint.config.js",
-  "description": "",
+  "description": "Reliance Soul Youth Foundation Frontend",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
