@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
@@ -10,6 +10,14 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+
+  // Redirect to admin if already logged in
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      navigate("/admin", { replace: true });
+    }
+  }, [navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +33,8 @@ const Login = () => {
 
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);
-        navigate("/admin");
+        // Use replace to prevent back button from returning to login
+        navigate("/admin", { replace: true });
       } else {
         setError("Invalid credentials");
       }
