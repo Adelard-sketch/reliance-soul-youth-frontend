@@ -82,7 +82,7 @@ const Contact = () => {
     <div className="contact-wrapper">
       {/* === Left: Info & Form === */}
       <div className="contact-form-section">
-        <h1 className="contact-title">We are happy to hear from you or Partner with you 💫</h1>
+        <h1 className="contact-title">We are happy to hear from you or Partner with you </h1>
         <p className="contact-subtitle">
           Whether you want to collaborate, support our mission, or just say hi — we'd love to connect!
         </p>
