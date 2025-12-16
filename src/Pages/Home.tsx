@@ -117,11 +117,11 @@ const preloadMedia = (src: string, type: string) =>
       img.src = src;
     } else if (type === "video") {
       const video = document.createElement("video");
-      video.preload = "metadata"; // Only load metadata, not full video
+      video.preload = "metadata";
       const handleLoad = () => {
         video.oncanplaythrough = null;
         video.onerror = null;
-        video.src = ""; // Clear source to prevent memory leak
+        video.src = ""; 
         resolve();
       };
       video.oncanplaythrough = handleLoad;
@@ -178,7 +178,6 @@ export default function Home() {
   const [index, setIndex] = useState(0);
   const [isReady, setIsReady] = useState(false);
 
-  // ✅ Preload first background
   useEffect(() => {
     const loadFirst = async () => {
       const first = backgrounds[0];
@@ -188,7 +187,7 @@ export default function Home() {
     loadFirst();
   }, []);
 
-  // ✅ Rotate backgrounds after preload
+ 
   useEffect(() => {
     if (!isReady) return;
     const timer = setInterval(
@@ -272,7 +271,6 @@ export default function Home() {
           <Link to="/contact" className="btn-primary">
             Partner With Us
           </Link>
-          {/* ✅ FIXED: this route must match App.tsx */}
           <Link to="/book-studio" className="btn-secondary">
             Book Session
           </Link>
@@ -289,7 +287,7 @@ export default function Home() {
       >
         <h2 className="section-title">Our Artistic Programs</h2>
         <p className="section-subtitle">
-          Hands-on sessions in creative industry — music, dance, and design for all ages.
+          Hands-on sessions in creative industry music, dance, and design for all ages.
         </p>
         <div className="grid">
           {programs.map((p, i) => (
@@ -297,8 +295,6 @@ export default function Home() {
           ))}
         </div>
       </motion.section>
-
-      {/* === PARTNERS === */}
       <motion.section
         className="section partnerships section--compact"
         variants={fadeIn}
@@ -356,7 +352,7 @@ export default function Home() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h3 className="cta-title">Join us — Be part of us</h3>
+        <h3 className="cta-title">Join us _ Be part of us</h3>
         <div className="hero-buttons">
           <Link to="/donate" className="btn-primary small">
             Donate
@@ -366,14 +362,6 @@ export default function Home() {
           </Link>
         </div>
       </motion.section>
-
-      {/* === FOOTER === */}
-      <footer className="footer">
-        © {new Date().getFullYear()} Reliance Soul International Youth Foundation —{" "}
-        <Link to="/privacy" className="footer-link">
-          Privacy
-        </Link>
-      </footer>
     </div>
   );
 }

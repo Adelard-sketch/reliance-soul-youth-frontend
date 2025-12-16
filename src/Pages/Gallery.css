@@ -80,6 +80,7 @@
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
 }
 
 .gallery-card:hover {
@@ -90,10 +91,12 @@
 .gallery-card img,
 .gallery-card video {
   width: 100%;
-  height: auto;
-  max-height: 320px;
-  object-fit: cover;
+  height: 250px;
+  object-fit: contain;
+  object-position: center;
+  background: #f5f5f5;
   border-bottom: 3px solid #0077ff;
+  display: block;
 }
 
 /* === Caption === */
@@ -126,13 +129,30 @@
   background: #cc0000;
 }
 
-/* === Loading / Empty === */
+/* === Loading / Empty / Error === */
 .loading,
-.empty {
+.empty,
+.error {
   text-align: center;
   color: #666;
   font-size: 1.1rem;
   margin-top: 2rem;
+}
+
+.error {
+  color: #d32f2f;
+  font-weight: 500;
+}
+
+.image-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  background: #f5f5f5;
+  color: #999;
+  font-size: 0.9rem;
+  border-bottom: 3px solid #ccc;
 }
 
 /* === Responsive === */
@@ -151,6 +171,6 @@
 
   .gallery-card img,
   .gallery-card video {
-    max-height: 220px;
+    height: 200px;
   }
 }

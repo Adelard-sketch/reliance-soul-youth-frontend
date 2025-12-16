@@ -1,7 +1,8 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import ErrorBoundary from "./Components/ErrorBoundary";
+import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Gallery from "./Pages/Gallery";
@@ -14,11 +15,26 @@ import Login from "./Pages/Login";
 import Admin from "./Pages/Admin";
 
 function App() {
-  const token = localStorage.getItem("token");
+  const [token, setToken] = useState<string | null>(() => localStorage.getItem("token"));
+
+  useEffect(() => {
+    const handleAuthChanged = () => setToken(localStorage.getItem("token"));
+    const handleStorage = (e: StorageEvent) => {
+      if (e.key === "token") setToken(localStorage.getItem("token"));
+    };
+
+    window.addEventListener("authChanged", handleAuthChanged);
+    window.addEventListener("storage", handleStorage);
+
+    return () => {
+      window.removeEventListener("authChanged", handleAuthChanged);
+      window.removeEventListener("storage", handleStorage);
+    };
+  }, []);
 
   return (
     <ErrorBoundary>
-      <div>
+      <div className="app-root">
         <Navbar />
         <main className="main-container">
           <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
@@ -40,6 +56,7 @@ function App() {
           </Routes>
         </Suspense>
       </main>
+      <Footer />
     </div>
     </ErrorBoundary>
   );

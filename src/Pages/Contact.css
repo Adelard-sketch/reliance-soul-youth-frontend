@@ -27,13 +27,13 @@
   margin-bottom: 1.5rem;
 }
 
-/* === CONTACT INFO BOX (Email, WhatsApp, Call) === */
+/* === CONTACT INFO BOX */
 .contact-email {
   margin-bottom: 2rem;
   padding: 1rem 1.2rem;
   background: rgba(161, 129, 129, 0.05);
-  border-left: 4px solid #1d4ed8;
-  border-radius: 10px;
+  border-left: 15px solid #1d4ed8;
+  border-radius: 5%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 

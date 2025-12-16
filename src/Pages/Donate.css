@@ -1,7 +1,4 @@
-/* ==========================
-   DONATE PAGE STYLING
-   ========================== */
-.donate-page {
+  .donate-page {
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -62,22 +59,19 @@
 }
 
 .btn-primary {
-  background:#ff5530;
-  color: #1a1a1a;
+  background: linear-gradient(90deg,#ff6d4d,#ff704d);
+  color: #fff;
 }
 .btn-primary:hover {
-  background: #ffffff,
+  transform: translateY(-2px);
 }
 .btn-secondary {
   background: #01338d;
   color: #fff;
 }
-.btn-secondary:hover {
-  background:#ff5530;
-}
 
 .active {
-  outline: 3px solid #01338d;
+  outline: 3px solid #fff;
 }
 
 /* ---------- FORMS ---------- */
@@ -117,12 +111,12 @@
 
 .donate-form button:hover,
 .manual-form button:hover {
-  background: #ff5530;
+  background: linear-gradient(90deg,#ff704d,#ff6d4d);
 }
 
 .status-message {
   margin-top: 1rem;
-  color: #01338d;
+  color: #ff6d4d;
   font-weight: 500;
   font-size: 0.95rem;
 }
@@ -168,7 +162,7 @@
 }
 
 /* ---------- RESPONSIVE DESIGN ---------- */
-@media (max-width: 900px) {
+@media (max-width: 600px) {
   .donate-page {
     flex-direction: column;
     padding: 1rem;

@@ -18,6 +18,8 @@
   import blaise from "../assets/blaiseProfile.jpg";
   import anuani from "../assets/anuani.jpg";  
   import chadrack from "../assets/chadrack.jpg";  
+  import jetty from "../assets/jetty.png";  
+
 
 
   import {
@@ -267,6 +269,11 @@ const VolunteerSection: React.FC<{ volunteers: Volunteer[] }> = ({ volunteers })
         name: "Anuani Fidel",
         department: "Creative Department",
         image: anuani,
+      },
+       {
+        name: "Jetty Petter",
+        department: "Finance Department",
+        image: jetty,
       },
     ],
   };

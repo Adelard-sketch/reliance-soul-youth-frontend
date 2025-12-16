@@ -61,7 +61,7 @@ const Donate = () => {
     <div className="donate-page">
       {/* Left Section: Donation Form */}
       <div className="donate-left">
-        <h1>Support Reliance Soul International Youth Foundation 💙</h1>
+        <h1>Support Reliance Soul International Youth Foundation 🙏</h1>
         <p>
           Every contribution helps us empower <strong>young refugees and IDPs</strong> through creativity,
           innovation, and opportunity.
@@ -72,13 +72,13 @@ const Donate = () => {
             className={`btn-primary ${mode === "stripe" ? "active" : ""}`}
             onClick={() => setMode("stripe")}
           >
-            Donate with Card 💳
+            Donate with card 💳
           </button>
           <button
             className={`btn-secondary ${mode === "manual" ? "active" : ""}`}
             onClick={() => setMode("manual")}
           >
-            I don't have a bank account 💬
+            Manual donation (bank transfer) 🏦
           </button>
         </div>
 
@@ -98,8 +98,8 @@ const Donate = () => {
               onChange={(e) => setAmount(e.target.value)}
               required
             />
-            <button onClick={handleStripeDonate} disabled={loading}>
-              {loading ? "Processing..." : "Donate Now 💖"}
+            <button onClick={handleStripeDonate} disabled={loading} className="donate-cta">
+              {loading ? "Processing..." : "Donate now ❤️"}
             </button>
           </div>
         ) : (
@@ -118,7 +118,7 @@ const Donate = () => {
               onChange={(e) => setManualInfo({ ...manualInfo, contact: e.target.value })}
               required
             />
-            <button type="submit">Submit Info 💬</button>
+            <button type="submit">Submit information ✉️</button>
           </form>
         )}
 

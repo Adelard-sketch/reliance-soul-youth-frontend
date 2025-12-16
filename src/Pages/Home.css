@@ -103,20 +103,20 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #ff8c42 0%, #ffd966 100%);
+  background: linear-gradient(135deg, #ff6d4d 0%, #ff6d4d 100%);
   transform: translateY(-2px);
-  color: #fff;
+  color: #000;
   border: none;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #ff6d4d 0%, #fec44f 100%);
+  background: #ffffff !important;
   transform: translateY(-2px);
 
 }
 
 .btn-secondary {
-  background: transparent;
+  background: #ff6d4d;
   border: 2px solid #fff;
   color: #fff;
   backdrop-filter: blur(10px);
@@ -128,6 +128,23 @@ body {
   border-color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Partner CTA on the home hero should be black for emphasis */
+.home-page .hero .btn-primary {
+  background: #ff6d4d !important;
+  color: #000 !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+.home-page .hero .btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 18px 42px rgba(0,0,0,0.28);
+}
+
+/* Ensure partner CTA hover background becomes white (higher specificity) */
+.home-page .hero .btn-primary:hover {
+  background: #ffffff !important;
+  color: #01338d !important;
 }
 
 /* === Section Base === */
@@ -170,7 +187,7 @@ body {
   transform: translateX(-50%);
   width: 50px;
   height: 3px;
-  background: linear-gradient(90deg, #ff6d4d, #fec44f);
+  background: #ff6d4d;
   border-radius: 2px;
 }
 
@@ -276,19 +293,19 @@ body {
   height: 110px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid rgba(1, 51, 141, 0.2);
-  opacity: 0.85;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 3px solid #ff6d4d;
+  opacity: 0.95;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
 }
 
 .partners-track img:hover {
-  transform: scale(1.2);
+  transform: scale(1.14);
   opacity: 1;
   border-color: #ff6d4d;
-  box-shadow: 0 6px 20px rgba(255, 109, 77, 0.3);
-  filter: brightness(1.05);
+  box-shadow: 0 10px 28px rgba(255, 109, 77, 0.18);
+  filter: brightness(1.02);
 }
 
 @keyframes scroll {
@@ -414,27 +431,7 @@ body {
 }
 
 /* === Footer === */
-.footer {
-  background: linear-gradient(135deg, #012454 0%, #01338d 100%);
-  color: #e0e0e0;
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.95rem;
-  margin-top: 0;
-  border-top: 3px solid rgba(255, 109, 77, 0.3);
-}
-
-.footer-link {
-  color: #fec44f;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-weight: 500;
-}
-
-.footer-link:hover {
-  color: #fff;
-  text-decoration: underline;
-}
+/* Footer moved to Components/Footer.css */
 
 /* === Responsive === */
 @media (min-width: 1400px) {

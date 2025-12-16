@@ -33,6 +33,8 @@ const Login = () => {
 
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);
+        // notify the app that auth changed so route guards update immediately
+        window.dispatchEvent(new Event('authChanged'));
         // Use replace to prevent back button from returning to login
         navigate("/admin", { replace: true });
       } else {
