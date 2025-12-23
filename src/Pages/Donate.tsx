@@ -128,7 +128,7 @@ const Donate = () => {
       {/* Right Section: Image + Message */}
       <div className="donate-right">
         <img
-          src={thankImage} // ✅ use imported image
+          src={thankImage} 
           alt="Thank you for supporting refugees"
           className="donate-image"
         />

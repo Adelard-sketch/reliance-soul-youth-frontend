@@ -58,7 +58,7 @@ const Gallery = () => {
             <div key={item._id} className="gallery-card">
               {item.mediaType === "video" ? (
                 <video
-                  src={`${API_URL}${item.mediaUrl}`}
+                  src={item.mediaUrl && (item.mediaUrl.startsWith('http') || item.mediaUrl.startsWith('https')) ? item.mediaUrl : `${API_URL}${item.mediaUrl}`}
                   controls
                   muted
                   preload="metadata"
@@ -66,7 +66,7 @@ const Gallery = () => {
                 />
               ) : (
                 <img 
-                  src={`${API_URL}${item.mediaUrl}`} 
+                  src={item.mediaUrl && (item.mediaUrl.startsWith('http') || item.mediaUrl.startsWith('https')) ? item.mediaUrl : `${API_URL}${item.mediaUrl}`} 
                   alt={item.caption || item.title || "Gallery image"}
                   loading="lazy"
                   onError={handleImageError}

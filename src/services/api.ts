@@ -178,6 +178,8 @@ export const healthCheck = async () => {
 
 // Export the base URL for image/video sources
 export const getMediaUrl = (path: string) => {
+  if (!path) return path;
+  if (path.startsWith('http') || path.startsWith('https')) return path;
   return `${API_BASE_URL}${path}`;
 };
 

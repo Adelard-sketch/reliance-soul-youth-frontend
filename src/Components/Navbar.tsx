@@ -166,8 +166,8 @@ function Navbar() {
             <a href={socialLinks.facebook} target="_blank" rel="noreferrer">
               <FaFacebookF />
             </a>
-            <a href={socialLinks.twitter} target="_blank" rel="noreferrer">
-              <FaTwitter />
+            <a href={socialLinks.tiktok} target="_blank" rel="noreferrer">
+              <FaTiktok />
             </a>
             <a href={socialLinks.linkedin} target="_blank" rel="noreferrer">
               <FaLinkedinIn />

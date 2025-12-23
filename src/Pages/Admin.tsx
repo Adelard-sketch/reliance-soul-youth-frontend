@@ -410,9 +410,9 @@ function Admin() {
                   gallery.map((item) => (
                     <div className="gallery-card" key={item._id}>
                       {item.mediaType === "video" ? (
-                        <video controls src={`${API_BASE}${item.mediaUrl}`} />
+                        <video controls src={item.mediaUrl && (item.mediaUrl.startsWith('http') || item.mediaUrl.startsWith('https')) ? item.mediaUrl : `${API_BASE}${item.mediaUrl}`} />
                       ) : (
-                        <img src={`${API_BASE}${item.mediaUrl}`} alt={item.title} />
+                        <img src={item.mediaUrl && (item.mediaUrl.startsWith('http') || item.mediaUrl.startsWith('https')) ? item.mediaUrl : `${API_BASE}${item.mediaUrl}`} alt={item.title} />
                       )}
                       <h4>{item.title}</h4>
                       <p>{item.caption}</p>

@@ -48,6 +48,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/donate" element={<Donate />} />
             <Route path="/login" element={<Login />} />
+            {/* allow /admin/login to land on the login page */}
+            <Route path="/admin/login" element={<Navigate to="/login" replace />} />
             <Route
               path="/admin"
               element={token ? <Admin /> : <Navigate to="/login" replace />}
