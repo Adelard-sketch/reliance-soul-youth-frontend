@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import "./Donate.css";
 import thankImage from "../assets/Ezekiel.jpg"; 
 
@@ -59,6 +60,17 @@ const Donate = () => {
 
   return (
     <div className="donate-page">
+      <Helmet>
+        <title>Donate | Support Youth Empowerment | Reliance Soul Foundation</title>
+        <meta name="description" content="Support our mission to empower youth through arts and culture. Your donation makes a real difference in young lives. Help us provide creative programs and opportunities." />
+        <meta property="og:title" content="Donate | Support Youth Empowerment | Reliance Soul Foundation" />
+        <meta property="og:description" content="Support our mission to empower youth through arts and culture. Your donation makes a real difference in young lives." />
+        <meta property="og:url" content="https://www.reliancesoulfdn.org/donate" />
+        <meta property="og:image" content="https://www.reliancesoulfdn.org/src/assets/reliance_logo.jpg" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://www.reliancesoulfdn.org/donate" />
+      </Helmet>
+      
       {/* Left Section: Donation Form */}
       <div className="donate-left">
         <h1>Support Reliance Soul International Youth Foundation 🙏</h1>

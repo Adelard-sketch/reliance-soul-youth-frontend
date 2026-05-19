@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { contactApi } from "../services/api";
 import LoadingSpinner from "../Components/LoadingSpinner";
 import "./Contact.css";
@@ -80,6 +81,17 @@ const Contact = () => {
 
   return (
     <div className="contact-wrapper">
+      <Helmet>
+        <title>Contact Us | Reliance Soul International Youth Foundation</title>
+        <meta name="description" content="Get in touch with Reliance Soul International Youth Foundation. We'd love to hear from you and answer your questions. Contact us for partnerships, inquiries, or support." />
+        <meta property="og:title" content="Contact Us | Reliance Soul International Youth Foundation" />
+        <meta property="og:description" content="Get in touch with Reliance Soul International Youth Foundation. We'd love to hear from you and answer your questions." />
+        <meta property="og:url" content="https://www.reliancesoulfdn.org/contact" />
+        <meta property="og:image" content="https://www.reliancesoulfdn.org/src/assets/reliance_logo.jpg" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://www.reliancesoulfdn.org/contact" />
+      </Helmet>
+      
       {/* === Left: Info & Form === */}
       <div className="contact-form-section">
         <h1 className="contact-title">We are happy to hear from you or Partner with you </h1>

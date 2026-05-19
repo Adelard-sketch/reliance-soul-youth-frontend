@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import "./About.css";
 import heroImage from "../assets/rsyGoma.jpg";
 import journeyImage from "../assets/Elili1.jpg";
@@ -30,6 +31,17 @@ const About = () => {
 
   return (
     <div className={`about-container ${darkMode ? "dark-mode" : ""}`}>
+      <Helmet>
+        <title>About Us | Reliance Soul International Youth Foundation</title>
+        <meta name="description" content="Learn about our mission to empower youth through arts and culture. Discover our story, values, and impact on young lives through creative programs and workshops." />
+        <meta property="og:title" content="About Us | Reliance Soul International Youth Foundation" />
+        <meta property="og:description" content="Learn about our mission to empower youth through arts and culture. Discover our story, values, and impact on young lives." />
+        <meta property="og:url" content="https://www.reliancesoulfdn.org/about" />
+        <meta property="og:image" content="https://www.reliancesoulfdn.org/src/assets/reliance_logo.jpg" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://www.reliancesoulfdn.org/about" />
+      </Helmet>
+      
       {/* === Dark Mode Toggle === */}
       <button className="dark-toggle" onClick={() => setDarkMode(!darkMode)}>
         {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}

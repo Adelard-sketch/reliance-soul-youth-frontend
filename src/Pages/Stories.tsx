@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import "./Stories.css";
 
@@ -41,6 +42,17 @@ const Stories = () => {
 
   return (
     <main className="stories-page">
+      <Helmet>
+        <title>Success Stories | Reliance Soul International Youth Foundation</title>
+        <meta name="description" content="Read inspiring stories of young people whose lives have been transformed through our arts and cultural programs. Discover stories of resilience, hope, and empowerment." />
+        <meta property="og:title" content="Success Stories | Reliance Soul International Youth Foundation" />
+        <meta property="og:description" content="Read inspiring stories of young people whose lives have been transformed through our arts and cultural programs." />
+        <meta property="og:url" content="https://www.reliancesoulfdn.org/stories" />
+        <meta property="og:image" content="https://www.reliancesoulfdn.org/src/assets/reliance_logo.jpg" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://www.reliancesoulfdn.org/stories" />
+      </Helmet>
+      
       {/* === Hero Section (Static Background) === */}
       <section className="stories-hero">
         <div className="overlay">

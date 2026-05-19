@@ -1,11 +1,12 @@
   import React, { useState } from "react";
+  import { Helmet } from "react-helmet-async";
   import "./Team.css";
 
   // === IMAGES ===
   import gloria from "../assets/Gloria3.jpg";
   import sonia from "../assets/sonia.jpg";
   import clara from "../assets/clara.png";
-  import adel from "../assets/adelard_ceo.png";
+  import adel from "../assets/adelWeb.png";
   import naomi from "../assets/naomi.png";
   import jp from "../assets/jpOr.png";
   import joseph from "../assets/joseph.png";
@@ -283,6 +284,17 @@ const VolunteerSection: React.FC<{ volunteers: Volunteer[] }> = ({ volunteers })
   ------------------------------ */
   const Team = () => (
     <div className="main-container">
+      <Helmet>
+        <title>Our Team | Reliance Soul International Youth Foundation</title>
+        <meta name="description" content="Meet the dedicated team behind Reliance Soul International Youth Foundation working to empower youth through arts and culture. Learn about our board members, executive committee, and volunteers." />
+        <meta property="og:title" content="Our Team | Reliance Soul International Youth Foundation" />
+        <meta property="og:description" content="Meet the dedicated team behind Reliance Soul International Youth Foundation working to empower youth through arts and culture." />
+        <meta property="og:url" content="https://www.reliancesoulfdn.org/team" />
+        <meta property="og:image" content="https://www.reliancesoulfdn.org/src/assets/reliance_logo.jpg" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://www.reliancesoulfdn.org/team" />
+      </Helmet>
+      
       <TeamSection title="Board Members" members={teamMembers.board} />
       <TeamSection title="Executive Committee" members={teamMembers.executive} />
       <VolunteerSection volunteers={teamMembers.volunteers} />

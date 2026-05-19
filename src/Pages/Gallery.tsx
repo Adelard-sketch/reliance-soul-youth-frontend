@@ -1,5 +1,6 @@
 // src/pages/Gallery.jsx
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import axios from "axios";
 import "./Gallery.css";
 
@@ -48,6 +49,17 @@ const Gallery = () => {
 
   return (
     <div className="gallery-page">
+      <Helmet>
+        <title>Gallery | Reliance Soul International Youth Foundation</title>
+        <meta name="description" content="Explore our gallery showcasing the creative works and achievements of talented young artists in our community. View photos and videos from our programs and events." />
+        <meta property="og:title" content="Gallery | Reliance Soul International Youth Foundation" />
+        <meta property="og:description" content="Explore our gallery showcasing the creative works and achievements of talented young artists in our community." />
+        <meta property="og:url" content="https://www.reliancesoulfdn.org/gallery" />
+        <meta property="og:image" content="https://www.reliancesoulfdn.org/src/assets/reliance_logo.jpg" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://www.reliancesoulfdn.org/gallery" />
+      </Helmet>
+      
       <h1>Gallery</h1>
 
       {items.length === 0 ? (

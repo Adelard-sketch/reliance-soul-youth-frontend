@@ -1,0 +1,251 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Reliance Soul International Youth Foundation",
+  "alternateName": "Reliance Soul Youth Foundation",
+  "legalName": "Reliance Soul International Youth Foundation",
+  "description": "Empowering young refugees and marginalized individuals through arts, culture, creative expression, vocational skills, and psychosocial support. We foster healing, leadership, and sustainable livelihoods.",
+  "url": "https://www.reliancesoulfdn.org",
+  "logo": "https://www.reliancesoulfdn.org/src/assets/reliance_logo.jpg",
+  "foundingDate": "2020",
+  "foundingLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "UG"
+    }
+  },
+  "founder": [
+    {
+      "@type": "Person",
+      "name": "Adelard Borauzima",
+      "jobTitle": "Co-Founder & CEO"
+    },
+    {
+      "@type": "Person",
+      "name": "Neema Gloria Wereje",
+      "jobTitle": "Co-Founder & Board Member"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "UG",
+    "addressRegion": "Uganda"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Uganda"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "East Africa"
+    }
+  ],
+  "knowsAbout": [
+    "Youth Empowerment",
+    "Arts Education",
+    "Music Workshops",
+    "Dance Classes",
+    "Creative Design",
+    "Cultural Expression",
+    "Community Development",
+    "Refugee Support",
+    "Psychosocial Support",
+    "Vocational Skills Training",
+    "Leadership Development",
+    "Sustainable Livelihoods",
+    "Creative Industry",
+    "Studio Recording",
+    "Podcast Production",
+    "Video Production",
+    "Photography",
+    "Sound Engineering"
+  ],
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=100093395088925",
+    "https://www.instagram.com/reliancesoulyouth/",
+    "https://www.youtube.com/@RelianceSoulYouthInitiative"
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "General Inquiries",
+      "email": "info@reliancesoulfdn.org",
+      "telephone": "+256777969984",
+      "availableLanguage": ["English", "French", "Swahili"]
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "WhatsApp",
+      "telephone": "+256777969984"
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "WhatsApp",
+      "telephone": "+233538453045"
+    }
+  ],
+  "mission": "To empower young refugees and marginalized individuals through arts, cultural expression, vocational skills, and psychosocial support, fostering healing, leadership, and sustainable livelihoods.",
+  "vision": "Reached, Touched, and Changed marginalized souls for freedom and self-reliance.",
+  "coreValues": [
+    "Creativity - We innovate and inspire through art",
+    "Empathy - We listen, connect, and uplift",
+    "Integrity - We act with honesty and purpose",
+    "Community - We grow stronger together",
+    "Resilience - We turn challenges into strength"
+  ],
+  "offers": [
+    {
+      "@type": "Service",
+      "name": "Music Workshops",
+      "description": "Sessions focused on performance, song composition, instruments, and production basics for youth empowerment",
+      "serviceType": "Educational Program",
+      "provider": {
+        "@type": "NGO",
+        "name": "Reliance Soul International Youth Foundation"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Dance Classes",
+      "description": "Movement, choreography, and confidence-building sessions for all levels",
+      "serviceType": "Educational Program",
+      "provider": {
+        "@type": "NGO",
+        "name": "Reliance Soul International Youth Foundation"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Design & Crafts Programs",
+      "description": "Practical design sessions covering visuals, crafts, and digital creativity",
+      "serviceType": "Educational Program",
+      "provider": {
+        "@type": "NGO",
+        "name": "Reliance Soul International Youth Foundation"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Studio Booking - Podcast Room",
+      "description": "Professional podcast recording space with premium microphones and acoustic treatment",
+      "serviceType": "Studio Rental",
+      "provider": {
+        "@type": "NGO",
+        "name": "Reliance Soul International Youth Foundation"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Studio Booking - Music Recording",
+      "description": "Professional music recording studio for vocal and instrumental recording",
+      "serviceType": "Studio Rental",
+      "provider": {
+        "@type": "NGO",
+        "name": "Reliance Soul International Youth Foundation"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Studio Booking - Mastering Suite",
+      "description": "Professional mixing and mastering services with high-end equipment",
+      "serviceType": "Studio Rental",
+      "provider": {
+        "@type": "NGO",
+        "name": "Reliance Soul International Youth Foundation"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Studio Booking - Video Production",
+      "description": "Professional video studio for filming and editing high-quality video projects",
+      "serviceType": "Studio Rental",
+      "provider": {
+        "@type": "NGO",
+        "name": "Reliance Soul International Youth Foundation"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Studio Booking - Photo Studio",
+      "description": "Professional photography studio with perfect lighting for portraits and creative shoots",
+      "serviceType": "Studio Rental",
+      "provider": {
+        "@type": "NGO",
+        "name": "Reliance Soul International Youth Foundation"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Sound System Rental",
+      "description": "Professional sound equipment rental for events and performances",
+      "serviceType": "Equipment Rental",
+      "provider": {
+        "@type": "NGO",
+        "name": "Reliance Soul International Youth Foundation"
+      }
+    }
+  ],
+  "programs": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "Community Music Initiative",
+      "description": "Empowering voices together for unity, learning, and cultural expression"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Art for Healing Program",
+      "description": "Using art and creativity to support emotional healing and wellbeing"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Skill Building Programs",
+      "description": "Empowerment in fashion design, pencil portrait, and artisan skill-building for youth empowerment"
+    }
+  ],
+  "partners": [
+    {
+      "@type": "Organization",
+      "name": "Ciyota Official"
+    },
+    {
+      "@type": "Organization",
+      "name": "Love Africa"
+    },
+    {
+      "@type": "Organization",
+      "name": "Global Missions"
+    },
+    {
+      "@type": "Organization",
+      "name": "Maison de Jeune"
+    },
+    {
+      "@type": "Organization",
+      "name": "Kuelimika"
+    }
+  ],
+  "keywords": [
+    "youth empowerment Uganda",
+    "refugee support",
+    "arts education",
+    "music workshops",
+    "dance classes",
+    "creative programs",
+    "studio booking Uganda",
+    "podcast recording",
+    "music recording studio",
+    "video production",
+    "photography studio",
+    "NGO Uganda",
+    "youth foundation",
+    "cultural expression",
+    "community development",
+    "marginalized youth",
+    "creative industry",
+    "vocational training",
+    "psychosocial support",
+    "leadership development"
+  ]
+}

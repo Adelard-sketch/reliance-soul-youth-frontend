@@ -1,5 +1,6 @@
-import React, { Suspense, useState, useEffect } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Navbar from "./Components/Navbar";
 import ErrorBoundary from "./Components/ErrorBoundary";
 import Footer from "./Components/Footer";
@@ -13,6 +14,7 @@ import Contact from "./Pages/Contact";
 import Donate from "./Pages/Donate";
 import Login from "./Pages/Login";
 import Admin from "./Pages/Admin";
+import FAQ from "./Pages/FAQ";
 
 function App() {
   const [token, setToken] = useState<string | null>(() => localStorage.getItem("token"));
@@ -33,34 +35,37 @@ function App() {
   }, []);
 
   return (
-    <ErrorBoundary>
-      <div className="app-root">
-        <Navbar />
-        <main className="main-container">
-          <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
-            <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/book-studio" element={<BookStudio />} />
-            <Route path="/stories" element={<Stories />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/donate" element={<Donate />} />
-            <Route path="/login" element={<Login />} />
-            {/* allow /admin/login to land on the login page */}
-            <Route path="/admin/login" element={<Navigate to="/login" replace />} />
-            <Route
-              path="/admin"
-              element={token ? <Admin /> : <Navigate to="/login" replace />}
-            />
-            <Route path="*" element={<div>Page not found</div>} />
-          </Routes>
-        </Suspense>
-      </main>
-      <Footer />
-    </div>
-    </ErrorBoundary>
+    <HelmetProvider>
+      <ErrorBoundary>
+        <div className="app-root">
+          <Navbar />
+          <main className="main-container">
+            <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
+              <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="/book-studio" element={<BookStudio />} />
+              <Route path="/stories" element={<Stories />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/donate" element={<Donate />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/login" element={<Login />} />
+              {/* allow /admin/login to land on the login page */}
+              <Route path="/admin/login" element={<Navigate to="/login" replace />} />
+              <Route
+                path="/admin"
+                element={token ? <Admin /> : <Navigate to="/login" replace />}
+              />
+              <Route path="*" element={<div>Page not found</div>} />
+            </Routes>
+          </Suspense>
+        </main>
+        <Footer />
+      </div>
+      </ErrorBoundary>
+    </HelmetProvider>
   );
 }
 

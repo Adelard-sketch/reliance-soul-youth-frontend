@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import "./BookStudio.css";
 import bgImage from "../assets/sky.jpg";
 import podcastImg from "../assets/PODCAST.jpg";
@@ -27,14 +28,14 @@ const BookStudio = () => {
   // ✅ Fix: Reset scroll + force background reflow on navigation
   useEffect(() => {
     window.scrollTo(0, 0);
-    const bg = document.querySelector(".booking-background");
+    const bg = document.querySelector(".booking-background") as HTMLElement;
     if (bg) {
       bg.style.backgroundImage = `url(${bgImage})`;
       bg.style.backgroundAttachment = "fixed"; // enforce fixed positioning
     }
   }, [location]); // rerun every time route changes
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -43,7 +44,7 @@ const BookStudio = () => {
     setFormData((prev) => ({ ...prev, category }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus({ loading: true, message: "" });
 
@@ -138,6 +139,17 @@ const BookStudio = () => {
       className="booking-background"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
+      <Helmet>
+        <title>Book Studio | Reliance Soul International Youth Foundation</title>
+        <meta name="description" content="Book our creative studio space for your artistic projects, rehearsals, and cultural events. Professional recording, podcast, video, and photo studio available." />
+        <meta property="og:title" content="Book Studio | Reliance Soul International Youth Foundation" />
+        <meta property="og:description" content="Book our creative studio space for your artistic projects, rehearsals, and cultural events. Professional recording and production facilities." />
+        <meta property="og:url" content="https://www.reliancesoulfdn.org/book-studio" />
+        <meta property="og:image" content="https://www.reliancesoulfdn.org/src/assets/reliance_logo.jpg" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://www.reliancesoulfdn.org/book-studio" />
+      </Helmet>
+      
       <div className="overlay">
         <div className="hero-section fade-in">
           <h1 className="hero-title">Welcome to Reliance Soul Studios</h1>

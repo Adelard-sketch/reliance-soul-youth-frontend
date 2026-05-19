@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Home.css";
 
@@ -209,6 +210,17 @@ export default function Home() {
 
   return (
     <div className="home-page">
+      <Helmet>
+        <title>Reliance Soul International Youth Foundation | Empowering Youth Through Arts & Culture</title>
+        <meta name="description" content="Reliance Soul International Youth Foundation empowers young people through arts, culture, and creative expression. Join our community, book studio sessions, and support our mission." />
+        <meta property="og:title" content="Reliance Soul International Youth Foundation | Empowering Youth Through Arts & Culture" />
+        <meta property="og:description" content="Empowering young people through arts, culture, and creative expression. Join our community and support our mission." />
+        <meta property="og:url" content="https://www.reliancesoulfdn.org/" />
+        <meta property="og:image" content="https://www.reliancesoulfdn.org/src/assets/reliance_logo.jpg" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://www.reliancesoulfdn.org/" />
+      </Helmet>
+      
       {/* === Background Rotator === */}
       <div className="background-wrapper" aria-hidden="true">
         <AnimatePresence mode="wait">
