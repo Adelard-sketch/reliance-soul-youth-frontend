@@ -1,62 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import "./Donate.css";
 import thankImage from "../assets/Ezekiel.jpg"; 
 
 const Donate = () => {
-  const [mode, setMode] = useState<"stripe" | "manual">("stripe");
-  const [amount, setAmount] = useState("");
-  const [email, setEmail] = useState("");
-  const [manualInfo, setManualInfo] = useState({ name: "", contact: "" });
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
-
-  // Stripe donation
-  const handleStripeDonate = async () => {
-    if (!amount || !email) {
-      alert("Please enter both amount and email.");
-      return;
-    }
-
-    setLoading(true);
-    setMessage("");
-
-    try {
-      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
-      const res = await fetch(`${API_URL}/api/donate`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          amount: parseFloat(amount),
-          donorEmail: email,
-        }),
-      });
-
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        setMessage("⚠️ Could not start donation session.");
-      }
-    } catch (err) {
-      console.error("Donation error:", err);
-      setMessage("❌ Something went wrong, please try again later.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // Manual donation option
-  const handleManualSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!manualInfo.name || !manualInfo.contact) {
-      alert("Please fill in both fields.");
-      return;
-    }
-
-    setMessage("✅ Thank you! We'll contact you soon to assist with your donation.");
-    setManualInfo({ name: "", contact: "" });
-  };
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="donate-page">
@@ -71,70 +22,57 @@ const Donate = () => {
         <link rel="canonical" href="https://www.reliancesoulfdn.org/donate" />
       </Helmet>
       
-      {/* Left Section: Donation Form */}
+      {/* Left Section: Donation Information */}
       <div className="donate-left">
-        <h1>Support Reliance Soul International Youth Foundation 🙏</h1>
+        <h1>Support Our Mission</h1>
         <p>
-          Every contribution helps us empower <strong>young refugees and IDPs</strong> through creativity,
-          innovation, and opportunity.
+          Thank you for your interest in supporting Reliance Soul Foundation. We are currently in the process of setting up our online donation system.
+        </p>
+        
+        <p>
+          If you would like to make a donation or learn more about how you can support our work, please contact us directly using any of the details below:
         </p>
 
-        <div className="donate-options">
-          <button
-            className={`btn-primary ${mode === "stripe" ? "active" : ""}`}
-            onClick={() => setMode("stripe")}
-          >
-            Donate with card 💳
-          </button>
-          <button
-            className={`btn-secondary ${mode === "manual" ? "active" : ""}`}
-            onClick={() => setMode("manual")}
-          >
-            Manual donation (bank transfer) 🏦
-          </button>
+        <div className="contact-details">
+          <div className="contact-item email-section">
+            <div className="contact-header">
+              <span className="contact-icon"></span>
+              <strong>Email</strong>
+            </div>
+            <a href="mailto:info@reliancesoulfdn.org" className="contact-link email-link">
+              info@reliancesoulfdn.org
+            </a>
+          </div>
+
+          <div className="contact-item phone-section">
+            <div className="contact-header">
+              <span className="contact-icon"></span>
+              <strong>WhatsApp / Phone</strong>
+            </div>
+            <div className="phone-grid">
+              <a href="https://wa.me/256786048499" className="contact-link phone-link">
+                <span className="country-flag">🇺🇬</span>
+                +256 786 048 499
+              </a>
+              <a href="tel:+12488547130" className="contact-link phone-link">
+                <span className="country-flag">🇺🇸</span>
+                +1 (248) 854-7130
+              </a>
+              <a href="https://wa.me/233538453058" className="contact-link phone-link">
+                <span className="country-flag">🇬🇭</span>
+                +233 538 453 058
+              </a>
+              <a href="https://wa.me/243901116715" className="contact-link phone-link">
+                <span className="country-flag">🇨🇩</span>
+                +243 901 116 715
+              </a>
+            </div>
+          </div>
         </div>
 
-        {mode === "stripe" ? (
-          <div className="donate-form">
-            <input
-              type="email"
-              placeholder="Your Email Address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <input
-              type="number"
-              placeholder="Donation Amount (USD)"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              required
-            />
-            <button onClick={handleStripeDonate} disabled={loading} className="donate-cta">
-              {loading ? "Processing..." : "Donate now ❤️"}
-            </button>
-          </div>
-        ) : (
-          <form className="manual-form" onSubmit={handleManualSubmit}>
-            <input
-              type="text"
-              placeholder="Your Name"
-              value={manualInfo.name}
-              onChange={(e) => setManualInfo({ ...manualInfo, name: e.target.value })}
-              required
-            />
-            <input
-              type="text"
-              placeholder="Email or WhatsApp Number"
-              value={manualInfo.contact}
-              onChange={(e) => setManualInfo({ ...manualInfo, contact: e.target.value })}
-              required
-            />
-            <button type="submit">Submit information ✉️</button>
-          </form>
-        )}
-
-        {message && <p className="status-message">{message}</p>}
+        <p className="closing-message">
+          Our team will be happy to guide you on the available donation options and answer any questions you may have.
+        </p>
       </div>
 
       {/* Right Section: Image + Message */}

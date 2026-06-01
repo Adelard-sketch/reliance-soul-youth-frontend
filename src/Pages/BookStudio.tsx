@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./BookStudio.css";
-import bgImage from "../assets/sky.jpg";
+import bgImage from "../assets/studio.jpg";
 import podcastImg from "../assets/PODCAST.jpg";
 import musicImg from "../assets/sing_studio.jpg";
 import photoImg from "../assets/photoshoot.jpeg";

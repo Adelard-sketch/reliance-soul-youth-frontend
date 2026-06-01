@@ -4,32 +4,30 @@ import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Home.css";
 
-// === Backgrounds ===
-import bg1 from "../assets/elili_Sing.jpg";
-import bg2 from "../assets/love1.mp4";
-import bg3 from "../assets/nature.mp4";
-import bg4 from "../assets/design1.jpg";
-import bg5 from "../assets/short3.mp4";
-import bg6 from "../assets/rsy_melody1.jpg";
-import bg7 from "../assets/danceShort.mp4";
-import bg8 from "../assets/rsy_melody2.jpg";
-import bg9 from "../assets/rsy0.jpg";
+// === Optimized Background Loading ===
+import bg1 from "../assets/artistic1.jpeg";
+import bg9 from "../assets/elili_Sing.jpg";
 
-const backgrounds = [
+// Lazy load other backgrounds after initial render
+const lazyBackgrounds = [
+  () => import("../assets/love1.mp4"),
+  () => import("../assets/artistic2.jpeg"),
+  () => import("../assets/rsy_melody1.jpg"),
+  () => import("../assets/rsy_melody2.jpg"),
+  () => import("../assets/rsyGoma.jpg"),
+  () => import("../assets/artistic6.jpeg"),
+  () => import("../assets/culturalDance.jpg"),
+];
+
+// Initial backgrounds for fast loading
+const initialBackgrounds = [
   { src: bg1, type: "image" },
   { src: bg9, type: "image" },
-  { src: bg2, type: "video" },
-  { src: bg3, type: "video" },
-  { src: bg4, type: "image" },
-  { src: bg5, type: "video" },
-  { src: bg6, type: "image" },
-  { src: bg7, type: "video" },
-  { src: bg8, type: "image" },
 ];
 
 // === Programs ===
 import musicImg from "../assets/Talent.jpg";
-import danceImg from "../assets/Cultural_dance.jpg";
+import danceImg from "../assets/culturalDance.jpg";
 import designImg from "../assets/designtop.jpg";
 
 const programs = [
@@ -62,13 +60,12 @@ const partners = [partner1, partner2, partner3, partner4, partner5];
 // === Projects ===
 import choirImg from "../assets/Choir.mp4";
 import healingImg from "../assets/house3.jpg";
-import dance from "../assets/Cultural_dance.jpg";
 import design from "../assets/design1.jpg";
 
 // === Future Vision ===
 import dream1 from "../assets/dream1.jpg";
 import dream2 from "../assets/dream2.jpg";
-import dream3 from "../assets/dream3.jpg";
+import dream3 from "../assets/relianceCenter.jpeg";
 import dream4 from "../assets/dream4.jpg";
 
 
@@ -83,7 +80,7 @@ const projects = [
   {
     img: healingImg,
     type: "image",
-    title: "Art for Healing Program",
+    title: "Art for Healing Center",
     desc: "Using art and creativity to support emotional healing and wellbeing.",
   },
   {
@@ -178,35 +175,81 @@ const VisionCard = ({ img, index }: any) => (
 export default function Home() {
   const [index, setIndex] = useState(0);
   const [isReady, setIsReady] = useState(false);
+  const [backgrounds, setBackgrounds] = useState(initialBackgrounds);
+  const [allBackgroundsLoaded, setAllBackgroundsLoaded] = useState(false);
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Load first background immediately
   useEffect(() => {
     const loadFirst = async () => {
-      const first = backgrounds[0];
+      const first = initialBackgrounds[0];
       await preloadMedia(first.src, first.type);
       setIsReady(true);
     };
     loadFirst();
   }, []);
 
- 
+  // Load additional backgrounds after initial render
   useEffect(() => {
     if (!isReady) return;
-    const timer = setInterval(
-      () => setIndex((i) => (i + 1) % backgrounds.length),
-      7000
-    );
-    return () => clearInterval(timer);
+    
+    const loadAdditionalBackgrounds = async () => {
+      try {
+        // Load additional backgrounds progressively
+        const additionalBgs = await Promise.all([
+          import("../assets/love1.mp4").then(m => ({ src: m.default, type: "video" })),
+          import("../assets/artistic2.jpeg").then(m => ({ src: m.default, type: "image" })),
+          import("../assets/rsy_melody1.jpg").then(m => ({ src: m.default, type: "image" })),
+          import("../assets/rsy_melody2.jpg").then(m => ({ src: m.default, type: "image" })),
+          import("../assets/rsyGoma.jpg").then(m => ({ src: m.default, type: "image" })),
+          import("../assets/artistic6.jpeg").then(m => ({ src: m.default, type: "image" })),
+          import("../assets/culturalDance.jpg").then(m => ({ src: m.default, type: "image" })),
+        ]);
+        
+        setBackgrounds([...initialBackgrounds, ...additionalBgs]);
+        setAllBackgroundsLoaded(true);
+      } catch (error) {
+        console.warn('Some backgrounds failed to load:', error);
+        setAllBackgroundsLoaded(true);
+      }
+    };
+
+    // Delay loading additional backgrounds
+    const timer = setTimeout(loadAdditionalBackgrounds, 2000);
+    return () => clearTimeout(timer);
   }, [isReady]);
+
+  // Background rotation with faster timing for video
+  useEffect(() => {
+    if (!isReady || !allBackgroundsLoaded) return;
+    
+    const getRotationTime = () => {
+      const current = backgrounds[index % backgrounds.length];
+      // Show video for only 4 seconds, images for 7 seconds
+      return current?.type === "video" ? 4000 : 7000;
+    };
+    
+    const timer = setTimeout(
+      () => setIndex((i) => (i + 1) % backgrounds.length),
+      getRotationTime()
+    );
+    return () => clearTimeout(timer);
+  }, [isReady, allBackgroundsLoaded, backgrounds.length, index]);
 
   if (!isReady) {
     return (
       <div className="loading-screen">
-        <p>Loading visuals...</p>
+        <div className="loading-spinner"></div>
+        <p>Loading...</p>
       </div>
     );
   }
 
-  const current = backgrounds[index];
+  const current = backgrounds[index % backgrounds.length];
 
   return (
     <div className="home-page">
@@ -223,7 +266,7 @@ export default function Home() {
       
       {/* === Background Rotator === */}
       <div className="background-wrapper" aria-hidden="true">
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           {current.type === "video" ? (
             <motion.video
               key={current.src}
@@ -236,7 +279,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1.2 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
             />
           ) : (
             <motion.img
@@ -247,7 +290,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1.2 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
             />
           )}
         </AnimatePresence>
@@ -274,19 +317,7 @@ export default function Home() {
           <strong>• Healing • Empowerment • Advocacy</strong>
         </motion.p>
 
-        <motion.div
-          className="hero-buttons"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-        >
-          <Link to="/contact" className="btn-primary">
-            Partner With Us
-          </Link>
-          <Link to="/book-studio" className="btn-secondary">
-            Book Session
-          </Link>
-        </motion.div>
+
       </header>
 
       {/* === PROGRAMS === */}

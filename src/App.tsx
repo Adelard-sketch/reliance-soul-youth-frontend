@@ -1,20 +1,34 @@
-import { Suspense, useState, useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Suspense, useState, useEffect, lazy } from "react";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Navbar from "./Components/Navbar";
 import ErrorBoundary from "./Components/ErrorBoundary";
 import Footer from "./Components/Footer";
-import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Gallery from "./Pages/Gallery";
-import Team from "./Pages/Team";
-import BookStudio from "./Pages/BookStudio";
-import Stories from "./Pages/Stories";
-import Contact from "./Pages/Contact";
-import Donate from "./Pages/Donate";
-import Login from "./Pages/Login";
-import Admin from "./Pages/Admin";
-import FAQ from "./Pages/FAQ";
+import LoadingSpinner from "./Components/LoadingSpinner";
+
+// Lazy load pages for better performance
+const Home = lazy(() => import("./Pages/Home"));
+const About = lazy(() => import("./Pages/About"));
+const Gallery = lazy(() => import("./Pages/Gallery"));
+const Team = lazy(() => import("./Pages/Team"));
+const BookStudio = lazy(() => import("./Pages/BookStudio"));
+const Stories = lazy(() => import("./Pages/Stories"));
+const Contact = lazy(() => import("./Pages/Contact"));
+const Donate = lazy(() => import("./Pages/Donate"));
+const FAQ = lazy(() => import("./Pages/FAQ"));
+const Login = lazy(() => import("./Pages/Login"));
+const Admin = lazy(() => import("./Pages/Admin"));
+
+// Scroll to top component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   const [token, setToken] = useState<string | null>(() => localStorage.getItem("token"));
@@ -38,9 +52,10 @@ function App() {
     <HelmetProvider>
       <ErrorBoundary>
         <div className="app-root">
+          <ScrollToTop />
           <Navbar />
           <main className="main-container">
-            <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
+            <Suspense fallback={<LoadingSpinner />}>
               <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />

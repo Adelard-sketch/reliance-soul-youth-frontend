@@ -57,6 +57,7 @@ body {
   text-align: center;
   color: white;
   padding: 0 2rem;
+  padding-top: 8rem; /* Push content down */
 }
 
 .hero-title {
@@ -116,18 +117,18 @@ body {
 }
 
 .btn-secondary {
-  background: #ff6d4d;
+  background: #01338d;
   border: 2px solid #fff;
   color: #fff;
   backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-  background: #fff;
-  color: #01338d;
+  background: #0056b3;
+  color: #fff;
   border-color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(1, 51, 141, 0.4);
 }
 
 /* Partner CTA on the home hero should be black for emphasis */
@@ -507,4 +508,35 @@ body {
   .vision-grid {
     gap: 1rem;
   }
+}
+/* === Loading Screen === */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fff7bc;
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(51, 51, 51, 0.1);
+  border-left: 4px solid #01338d;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

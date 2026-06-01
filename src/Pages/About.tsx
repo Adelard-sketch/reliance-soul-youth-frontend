@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import "./About.css";
-import heroImage from "../assets/rsyGoma.jpg";
 import journeyImage from "../assets/Elili1.jpg";
 import artImage from "../assets/rsy2.jpg";
 
 const About = () => {
   const [darkMode, setDarkMode] = useState(false);
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const videos = [
     {
@@ -47,22 +51,6 @@ const About = () => {
         {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
       </button>
 
-      {/* === Hero Section === */}
-      <section
-        className="about-hero"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="about-overlay">
-          <h1 className="about-title">About Us</h1>
-          <p className="about-subtitle">
-            At <strong>Reliance Soul Youth International Foundation</strong>, we
-            use the power of art, music, and storytelling to heal, transform
-            lives, and build a future where every young person from marginalized
-            communities can thrive creatively and confidently.
-          </p>
-        </div>
-      </section>
-
       {/* === Our Journey Section === */}
       <section className="about-section">
         <div className="about-content">
@@ -99,14 +87,14 @@ const About = () => {
         <h2>Our Vision, Mission & Values</h2>
         <div className="vmv-grid">
           <div className="vmv-card">
-            <h3>🌍 Vision</h3>
+            <h3>Vision</h3>
             <p>
               Reached, Touched, and Changed marginalized souls for freedom and selfreliance.
             </p>
           </div>
 
           <div className="vmv-card">
-            <h3>🎯 Mission</h3>
+            <h3>Mission</h3>
             <p>
               To empower young refugees and marginalized individuals through arts, cultural
               expression, vocational skills, and psychosocial support, fostering healing, 
@@ -115,13 +103,13 @@ const About = () => {
           </div>
 
           <div className="vmv-card">
-            <h3>💫 Core Values</h3>
+            <h3>Our Values</h3>
             <ul>
-              <li><strong>Creativity</strong> — We innovate and inspire through art.</li>
-              <li><strong>Empathy</strong> — We listen, connect, and uplift.</li>
-              <li><strong>Integrity</strong> — We act with honesty and purpose.</li>
-              <li><strong>Community</strong> — We grow stronger together.</li>
-              <li><strong>Resilience</strong> — We turn challenges into strength.</li>
+              <li><strong>Creativity</strong> : We innovate and inspire through art.</li>
+              <li><strong>Empathy</strong> : We listen, connect, and uplift.</li>
+              <li><strong>Integrity</strong> : We act with honesty and purpose.</li>
+              <li><strong>Community</strong> : We grow stronger together.</li>
+              <li><strong>Resilience</strong> : We turn challenges into strength.</li>
             </ul>
           </div>
         </div>

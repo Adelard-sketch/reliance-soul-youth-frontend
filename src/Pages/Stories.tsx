@@ -53,17 +53,6 @@ const Stories = () => {
         <link rel="canonical" href="https://www.reliancesoulfdn.org/stories" />
       </Helmet>
       
-      {/* === Hero Section (Static Background) === */}
-      <section className="stories-hero">
-        <div className="overlay">
-          <h1>Stories of Resilience</h1>
-          <p>
-            Voices of young refugees and displaced youth who turned their pain
-            into power through creativity, courage, and community.
-          </p>
-        </div>
-      </section>
-
       {/* === Stories Section === */}
       <section className="stories-list">
         {stories.map((story, index) => (

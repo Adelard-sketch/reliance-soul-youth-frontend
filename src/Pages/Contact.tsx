@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { contactApi } from "../services/api";
 import LoadingSpinner from "../Components/LoadingSpinner";
@@ -15,6 +15,11 @@ const Contact = () => {
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};

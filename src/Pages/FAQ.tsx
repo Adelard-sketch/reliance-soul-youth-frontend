@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import "./FAQ.css";
 
@@ -9,6 +9,11 @@ interface FAQItem {
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const faqs: FAQItem[] = [
     {
